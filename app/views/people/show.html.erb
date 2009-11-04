@@ -1,0 +1,78 @@
+<p>
+  <b>First name:</b>
+  <%=h @person.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @person.last_name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @person.title %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @person.email %>
+</p>
+
+<p>
+  <b>Street 1:</b>
+  <%=h @person.street_1 %>
+</p>
+
+<p>
+  <b>Street 2:</b>
+  <%=h @person.street_2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @person.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @person.state %>
+</p>
+
+<p>
+  <b>Postal code:</b>
+  <%=h @person.postal_code %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @person.country %>
+</p>
+
+<p>
+  <b>Candidate:</b>
+  <%=h @person.candidate %>
+</p>
+
+<p>
+  <b>Alumni:</b>
+  <%=h @person.alumni %>
+</p>
+
+<p>
+  <b>Supervisor:</b>
+  <%=h @person.supervisor %>
+</p>
+
+<p>
+  <b>Faculty:</b>
+  <%=h @person.faculty %>
+</p>
+
+<p>
+  <b>Founding faculty:</b>
+  <%=h @person.founding_faculty %>
+</p>
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

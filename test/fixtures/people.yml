@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  title: MyString
+  email: MyString
+  street_1: MyString
+  street_2: MyString
+  city: MyString
+  state: MyString
+  postal_code: MyString
+  country: MyString
+  candidate: false
+  alumni: false
+  supervisor: false
+  faculty: false
+  founding_faculty: false
+
+two:
+  first_name: MyString
+  last_name: MyString
+  title: MyString
+  email: MyString
+  street_1: MyString
+  street_2: MyString
+  city: MyString
+  state: MyString
+  postal_code: MyString
+  country: MyString
+  candidate: false
+  alumni: false
+  supervisor: false
+  faculty: false
+  founding_faculty: false

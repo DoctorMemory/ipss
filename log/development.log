@@ -1,0 +1,89 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (75.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (13.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20091104042726)
+  [4;35;1mSQL (30.3ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `title` varchar(255), `email` varchar(255), `street_1` varchar(255), `street_2` varchar(255), `city` varchar(255), `state` varchar(255), `postal_code` varchar(255), `country` varchar(255), `candidate` tinyint(1), `alumni` tinyint(1), `supervisor` tinyint(1), `faculty` tinyint(1), `founding_faculty` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091104042726')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mSQL (6.2ms)[0m   [0mdescribe `people`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `people`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-11-03 23:34:09) [GET]
+  [4;36;1mPerson Load (6.1ms)[0m   [0;1mSELECT * FROM `people` [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 215ms (View: 184, DB: 7) | 200 OK [http://127.0.0.1/people]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-11-03 23:34:50) [GET]
+  [4;35;1mPerson Columns (9.7ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+Rendering template within layouts/people
+Rendering people/new
+Completed in 523ms (View: 469, DB: 10) | 200 OK [http://127.0.0.1/people/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2009-11-03 23:35:30) [POST]
+  Parameters: {"person"=>{"city"=>"New York", "street_1"=>"528 West 111th Street", "country"=>"US", "street_2"=>"Apt. #87", "title"=>"", "postal_code"=>"10025-1935", "founding_faculty"=>"0", "candidate"=>"0", "faculty"=>"1", "last_name"=>"Watkins", "supervisor"=>"1", "alumni"=>"1", "state"=>"NY", "email"=>"watkinsbrainr@gmail.com", "first_name"=>"Brian"}, "commit"=>"Create", "authenticity_token"=>"1/bS7uNjVae/HHeh53985BHpJ/9KRRaELR3Okp4Mef0="}
+  [4;36;1mPerson Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mPerson Create (1.1ms)[0m   [0;1mINSERT INTO `people` (`city`, `street_1`, `created_at`, `title`, `street_2`, `country`, `postal_code`, `updated_at`, `candidate`, `founding_faculty`, `faculty`, `last_name`, `first_name`, `email`, `state`, `alumni`, `supervisor`) VALUES('New York', '528 West 111th Street', '2009-11-04 04:35:30', '', 'Apt. #87', 'US', '10025-1935', '2009-11-04 04:35:30', 0, 0, 1, 'Watkins', 'Brian', 'watkinsbrainr@gmail.com', 'NY', 1, 1)[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/people/1
+Completed in 98ms (DB: 13) | 302 Found [http://127.0.0.1/people]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (14.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-11-03 23:35:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/people
+Rendering people/show
+Completed in 185ms (View: 96, DB: 20) | 200 OK [http://127.0.0.1/people/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2009-11-03 23:35:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Columns (15.4ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (1.4ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/people
+Rendering people/edit
+Completed in 246ms (View: 185, DB: 17) | 200 OK [http://127.0.0.1/people/1/edit]
+  [4;36;1mSQL (6.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-11-03 23:35:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Columns (13.7ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (1.3ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/people
+Rendering people/show
+Completed in 98ms (View: 33, DB: 22) | 200 OK [http://127.0.0.1/people/1]
+  [4;36;1mSQL (8.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-11-03 23:35:56) [GET]
+  [4;36;1mPerson Load (1.2ms)[0m   [0;1mSELECT * FROM `people` [0m
+Rendering template within layouts/people
+Rendering people/index
+  [4;35;1mPerson Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+Completed in 109ms (View: 83, DB: 14) | 200 OK [http://127.0.0.1/people]

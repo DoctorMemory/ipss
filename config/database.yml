@@ -1,0 +1,28 @@
+
+development:
+  adapter: mysql
+  encoding: utf8
+  database: ipss_development
+  pool: 5
+  username: not_the_user
+  password: not_the_password
+  socket: /var/lib/mysql/mysql.sock
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: ipss_test
+  pool: 5
+  username: not_the_user
+  password: not_the_password
+  socket: /var/lib/mysql/mysql.sock
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: ipss_production
+  pool: 5
+  username: not_the_user
+  password: not_the_password
+  socket: /var/lib/mysql/mysql.sock
+
